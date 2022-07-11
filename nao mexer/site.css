@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'bebas neue';
+    margin: 0;
+    padding: 0;
+    background-color: #14181c;
+  }
+  
+  header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 10%;
+    background-color: #14181c;
+  }
+  
+  .logo {
+    margin-right: auto;
+  }
+ 
+  .nav__links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav__links a,
+  .cta,
+  .overlay__content a {
+    font-family:'bebas neue';
+    font-size: 30px;
+    letter-spacing: 3px;
+    color: #edf0f1;
+    text-decoration: none;
+  }
+  
+  .nav__links li {
+    padding: 0px 20px;
+  }
+  
+  .nav__links li a {
+    transition: all 0.3s ease 0s;
+  }
+  
+  .nav__links li a:hover {
+    color: #ffb1c9;
+  }
+  
+  .cta {
+    margin-left: 20px;
+    padding: 9px 25px;
+    background-color: rgb(255, 74, 144);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+  }
+  
+  .cta:hover {
+    background-color: rgba(169, 0, 99, 0.8);
+  }
+  
+  /* Mobile Nav */
+  
+  .menu {
+    display: none;
+  }
+  
+  .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: #24252a;
+    overflow-x: hidden;
+    transition: all 0.5s ease 0s;
+  }
+  
+  .overlay--active {
+    width: 100%;
+  }
+  
+  .overlay__content {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .overlay a {
+    padding: 15px;
+    font-size: 36px;
+    display: block;
+    transition: all 0.3s ease 0s;
+  }
+  
+  .overlay a:hover,
+  .overlay a:focus {
+    color: #0088a9;
+  }
+  .overlay .close {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    color: #edf0f1;
+    cursor: pointer;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .overlay a {
+      font-size: 20px;
+    }
+    .overlay .close {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+  }
+  
+  @media only screen and (max-width: 800px) {
+    .nav__links,
+    .cta {
+      display: none;
+    }
+    .menu {
+      display: initial;
+    }
+  }
+
+
+  
+
+  .column {
+    float: left;
+    margin-left: 10%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    height: 100%;
+  }
+  
+  img.fotomaio{
+      border-radius: 20px;
+  }
+
+  .titulo{
+    font-family: 'Times New Roman', Times, serif;  
+    color: white;
+    font-size: 55px;
+
+  }
+  .titulo2{
+      
+    font-family: 'Times New Roman', Times, serif;  
+    color: rgba(255, 255, 255, 0.781);
+    font-size: 30px;
+
+  }
+  .titulo3{
+    margin-top: 25px;    
+    font-family: 'Times New Roman', Times, serif;  
+    color: rgba(255, 255, 255, 0.459);
+    font-size: 25px;
+    margin-left: 50%;
+  }
+  .titulo4{
+    font-family: 'Times New Roman', Times, serif;  
+    color: white;
+    font-size: 17.5px;
+    padding: 10px;
+    margin-right: 10%;
+    margin-left: 30%;
+    text-align: justify;
+
+  }
+
+
+  
+  h1 {
+    font-family: 'Fjalla One', sans-serif;
+    margin-bottom: 0.15rem;
+  }
+  
+  h2 {
+    font-family: 'Cutive Mono', 'Courier New';
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-bottom: 4rem;
+  }
+  
+  label {
+    cursor: pointer;
+  }
+  
+  svg {
+    width: 3rem;
+    height: 3rem;
+    padding: 0.6rem;
+  }
+  
+  
+  /* hide radio buttons */
+  
+  input[name="star"] {
+    display: inline-block;
+    width: 0;
+    opacity: 0;
+    margin-left: -2px;
+  }
+  
+  /* hide source svg */
+  
+  .star-source {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+  
+  
+  /* set initial color to transparent so fill is empty*/
+  
+  .star {
+    color: transparent;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  
+  /* set direction to row-reverse so 5th star is at the end and ~ can be used to fill all sibling stars that precede last starred element*/
+  
+  .star-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: left;
+    margin-left: 12.3%;
+  }
+  
+  label:hover ~ label .star,
+  svg.star:hover,
+  input[name="star"]:focus ~ label .star,
+  input[name="star"]:checked ~ label .star {
+    color: #ff2088;
+  }
+  
+  input[name="star"]:checked + label .star {
+    animation: starred 0.5s;
+  }
+  
+  input[name="star"]:checked + label {
+    animation: scaleup 1s;
+  }
+  
+  @keyframes scaleup {
+    from {
+      transform: scale(1.2);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes starred {
+    from {
+      color: #600040;
+    }
+    to {
+      color: #ff2088;
+    }
+  }
+
+
+  hr {
+    margin-left: 12%;
+    margin-right: 12%;
+  }
+
+
+  .titulo6{
+    margin-top: 2%;
+    font-size: 35px;
+    color: white;
+  }
+
+  footer{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    text-align: center;
+    color: #744f5e;
+  }
